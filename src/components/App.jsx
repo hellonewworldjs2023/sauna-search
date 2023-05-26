@@ -1,26 +1,21 @@
-
-import { useState } from 'react';
+import {  Route, Routes } from 'react-router-dom';
 import '../App.css';
-import dummyData from '../dummyData';
-import Article from './Article';
+import Homepage from '../pages/homepage';
+import NoMatch from '../pages/noMatch';
+import Sauna from '../pages/sauna';
+import Saunas from '../pages/saunas';
 
 function App() {
 
-  const [data,setData] = useState(dummyData);
-
   return (
-    <>
-      <h3 className="text-3xl font-bold underline">hello!</h3>
-      {data.map((section) =>
-          <div className='mx-auto w-1/2'><Article key={section.id} name={section.name} 
-          image= {section.image}
-          maleSaunaTemp ={section.male.saunaTemp} maleColdBath={section.male.coldBath} 
-          maleAirBath = {section.male.airBath} maleLouryu = {section.male.louryu}
-          femaleSaunaTemp ={section.female.saunaTemp} femaleColdBath={section.female.coldBath} 
-          femaleAirBath = {section.female.airBath} femaleLouryu = {section.female.louryu}
-          price={section.price}
-          /></div>
-        )}
+    <>   
+        <Routes>
+          <Route path='/' exact element={<Homepage/>}/>
+          <Route path='/saunas' element={<Saunas/>}>
+            <Route path=':saunaId' element={<Sauna/>}/>
+          </Route>
+          <Route path='*' element={<NoMatch/>}/>
+        </Routes>    
     </>
   );
 }
