@@ -4,8 +4,11 @@ import { Outlet } from 'react-router-dom'
 const Saunas = () => {
   return (
     <div className='bg-gray-300'>
-        <h2>Saunas</h2>
-        <Outlet/>
+      <div className='flex flex-row'>
+        <img src="../img/article-logo.jpg" alt="orz" width='40' height='40'/>
+        <h2 className='text-2xl'>サウナいこうよ</h2>
+      </div>
+      <Outlet/>
     </div>
   )
 }

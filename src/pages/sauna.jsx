@@ -6,6 +6,7 @@ import Paying from '../components/Paying';
 import Rental from '../components/Rental';
 import SaunaFacility from '../components/SaunaFacility';
 import Service from '../components/Service';
+import WeatherForecast from '../components/WeatherForecast';
 import dummyData from '../dummyData';
 
 
@@ -19,7 +20,6 @@ const Sauna = () => {
   return (
     <div className='text-center'>
       <div className='w-3/5 bg-white mx-auto '>
-        <p>{saunaId}</p>
         <h1 className='text-4xl font-bold mb-12'>{saunaData.name}</h1>
         <div className='mb-10'>
           <SaunaFacility sex="男湯" saunaTemp={saunaData.male.saunaTemp} coldBathTemp={saunaData.male.coldBath}
@@ -33,7 +33,7 @@ const Sauna = () => {
         </div>
         <div className='mb-10'>
           <Service allTime={saunaData.service.allTime} restArea={saunaData.service.restArea} eatingSpace={saunaData.service.eatingSpace}
-           comics={saunaData.service.comics} waterDispenser={saunaData.service.waterDispenser} parkingArea={saunaData.service.parkingArea}/>
+          comics={saunaData.service.comics} waterDispenser={saunaData.service.waterDispenser} parkingArea={saunaData.service.parkingArea}/>
         </div>
         <div className='mb-10'>          
           <Paying  cash={saunaData.paying.cash} credit={saunaData.paying.credit} eMoney={saunaData.paying.eMoney}/>
@@ -48,6 +48,9 @@ const Sauna = () => {
         </div>
         <div className='mb-10'>
           <Information image={saunaData.image} name={saunaData.name} adress={saunaData.adress} tel={saunaData.tel} page={saunaData.page}/>
+        </div>
+        <div className='mb-10'>
+          <WeatherForecast/>
         </div>
         <div className=''>
           <Link to="/">
