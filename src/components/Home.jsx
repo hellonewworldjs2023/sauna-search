@@ -14,8 +14,8 @@ const Home = () => {
      <h3 className="text-3xl font-bold underline">Hello Sauna!</h3>
     {data.map((section) =>
         
-            <div className='mx-auto w-1/2'>
-              <Link key={section.id} to={`/saunas/${section.id}`} className='mx-auto w-1/2' >
+            <div className='mx-auto w-1/2' key={section.id}>
+              <Link  to={`/saunas/${section.id}`} className='mx-auto w-1/2' >
                 <Article  name={section.name} 
                 image= {section.image} area={section.area}
                 maleSaunaTemp ={section.male.saunaTemp} maleColdBath={section.male.coldBath} 

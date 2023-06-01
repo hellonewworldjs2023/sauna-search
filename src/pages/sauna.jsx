@@ -6,6 +6,7 @@ import Paying from '../components/Paying';
 import Rental from '../components/Rental';
 import SaunaFacility from '../components/SaunaFacility';
 import Service from '../components/Service';
+import WeatherComponent from '../components/WeatherComponent';
 import WeatherForecast from '../components/WeatherForecast';
 import dummyData from '../dummyData';
 

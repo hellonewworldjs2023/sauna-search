@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-const WeatherForecast = () => {
+const WeatherComponent = () => {
 
     const weatherCode = {
         100: ["100.svg", "500.svg", "晴れ"],
@@ -122,132 +122,69 @@ const WeatherForecast = () => {
         427: ["400.svg", "400.svg", "雪一時みぞれ"],
         450: ["400.svg", "400.svg", "雪で雷を伴う"],
       };
-      
-      const url = "https://www.jma.go.jp/bosai/forecast/data/forecast/270000.json";
-      
-      const dayList = ["日", "月", "火", "水", "木", "金", "土"];
-      
-      // const timeDefinesList = new Array();
-      // const weatherCodeList = new Array();
-      // const tempsMinList = new Array();
-      // const tempsMaxList = new Array();
 
-      const [timeDefinesList,setTimeDefinesList] = useState([]);
-      const [weatherCodeList,setWeatherCodeList] = useState([]);
-      const [tempsMinList,setTempsMinList] = useState([]);
-      const [tempsMaxList,setTempsMaxList] = useState([]);
-      const [date,setDate] = useState([]);
+  const [weatherData, setWeatherData] = useState([]);
 
-      const [weekdayCount,setWeekdayCount] = useState([]);
-      const [weatherImg,setWeatherImg] = useState([]);
-      const [weatherTelop,setWeatherTelop] = useState([]);
-      const [airForecast,setAirForecast] = useState([]);
-      
-      // JSON取得
-      useEffect(() =>{
-        fetch(url)
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (weather) {
-            document
-              .getElementById("location")
-              .prepend(
-                `${weather[1].publishingOffice}: ${weather[1].timeSeries[0].areas[0].area.name} `
-              );
+  const tempsMinList = new Array();
+  const tempsMaxList = new Array();
 
-            const timeDefinesList = new Array();
-            const weatherCodeList = new Array();
-            const tempsMinList = new Array();
-            const tempsMaxList = new Array();
-            const weekdayCount = new Array();
-            const weatherImg = new Array();
-            const weatherTelop = new Array();
-            const airForecast = new Array();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://www.jma.go.jp/bosai/forecast/data/forecast/.json');
+        const weather = await response.json();
 
-            const isTodaysData = weather[0].timeSeries[2].timeDefines.length === 4;
-            const weatherCodes = weather[0].timeSeries[0].areas[0].weatherCodes;
-            const timeDefines = weather[0].timeSeries[0].timeDefines;
-            const temps = weather[0].timeSeries[2].areas[0].temps;
-            weatherCodeList.push(weatherCodes[0], weatherCodes[1]);
-            timeDefinesList.push(timeDefines[0], timeDefines[1]);
-            if (isTodaysData) {
-              tempsMinList.push(temps[0] === temps[1] ? "--" : temps[0], temps[2]);
-              tempsMaxList.push(temps[1], temps[3]);
-            } else {
-              tempsMinList.push("--", temps[0]);
-              tempsMaxList.push("--", temps[1]);
-            }
-        
-            const startCount =
-              weather[1].timeSeries[0].timeDefines.indexOf(timeDefines[1]) + 1;
-            for (let i = startCount; i < startCount + 5; i++) {
-              weatherCodeList.push(weather[1].timeSeries[0].areas[0].weatherCodes[i]);
-              timeDefinesList.push(weather[1].timeSeries[0].timeDefines[i]);
-              tempsMinList.push(weather[1].timeSeries[1].areas[0].tempsMin[i]);
-              tempsMaxList.push(weather[1].timeSeries[1].areas[0].tempsMax[i]);
-            }
+        const isTodaysData = weather[0].timeSeries[2].timeDefines.length === 4;
+        const weatherCodes = weather[0].timeSeries[0].areas[0].weatherCodes;
+        const timeDefines = weather[0].timeSeries[0].timeDefines;
+        const temps = weather[0].timeSeries[2].areas[0].temps;
 
-            setTimeDefinesList(timeDefinesList);
-            setWeatherCodeList(weatherCodeList);
-            setTempsMinList(tempsMinList);
-            setTempsMaxList(tempsMaxList);
+        const weatherData = [];
+        weatherData.push(weatherCodes[0], weatherCodes[1]);
+        weatherData.push(timeDefines[0], timeDefines[1]);
+        if (isTodaysData) {
+          weatherData.push(temps[0], temps[1]);
+        }
 
-            const date =[];            
-              
-            for(let i=0; i<timeDefinesList.length;i++) {
-              let dt = new Date(timeDefinesList[i]);
-              weekdayCount[i] = dt.getDay();
-              var m = ("00" + (dt.getMonth() + 1)).slice(-2);
-              var d = ("00" + dt.getDate()).slice(-2);
-              date.push(`${m}/${d}(${dayList[weekdayCount[i]]})`);
-              var isNight = Number(i === 0 && !isTodaysData)
-              weatherImg[i]= "https://www.jma.go.jp/bosai/forecast/img/" + weatherCode[weatherCodeList[i]][isNight];
-              weatherTelop[i]= weatherCode[weatherCodeList[i]][2];
-          
-              //外気浴予報の記述
-              if(weatherCodeList[i] === "100"){
-                airForecast[i] = "◎";
-              }else if(weatherCodeList[i] === "200"){
-                airForecast[i] = "〇";
-              }else if(weatherCodeList[i] === "300"){
-                airForecast[i] = "△";
-              }else{
-                airForecast[i] = "-";
-              }
-            };
+        setWeatherData(weatherData);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    };
 
-            setDate(date);
-            setWeekdayCount(weekdayCount);
-            setWeatherImg(weatherImg);
-            setWeatherTelop(weatherTelop);
-            setAirForecast(airForecast);
-            
-        });
-
-      },[]);
+    fetchData();
+  }, []);
 
   return (
-    <>
-        
-        <div id="location"></div><a href="https://www.jma.go.jp/bosai/forecast/" target="_blank">気象庁のデータを元に作成</a>
-        <div className="weatherForecast w-[840px] h-[240px] text-center border border-solid border-black flex flex-row">
-        {timeDefinesList.map((time,i)=> 
-
-          <div className="weather w-[120px] box-border border border-solid border-[#666]" key={time}>
-            <div className={"date text-sm "+ (weekdayCount[i] === 0 ? "text-red-600":weekdayCount[i]===6 ? "text-blue-600" : "")}><p>{date[i]}</p></div>
-            <div className="text-sm flex justify-center"><img src={weatherImg[i]} alt="orz"/></div>
-            <div className="text-sm"><p>{weatherTelop[i]} </p><br/></div>
-            <div className='text-sm'><p>外気浴予報</p></div>
-            <div className='text-2xl'><p>{airForecast[i]}</p></div>
-            <div className='text-sm'><span className=" text-blue-600">{tempsMinList[i]}℃</span>/<span className="text-red-600">{tempsMaxList[i]}℃</span></div>  
+    <div>
+      <div id="location">
+        <a href="https://www.jma.go.jp/bosai/forecast/" target="_blank">
+          気象庁のデータを元に作成
+        </a>
+      </div>
+      <div className="weatherForecast">
+        <div className="weather">
+          <div className="date">--/--(-)</div>
+          <img className="weatherImg" alt="weather image" />
+          <div className="weatherTelop">--</div>
+          <div>
+            <span className="tempMin">-℃</span>/<span className="tempMax">-℃</span>
           </div>
-          
-        )}
         </div>
-
-    </>
+        {weatherData.map((data, index) => (
+          <div className="weather" key={index}>
+            <div className="date">--/--(-)</div>
+            <img className="weatherImg" src={weatherCode[data][0]} alt="weather image" />
+            <div className="weatherTelop">{weatherCode[data][2]}</div>
+            <div>
+              <span className="tempMin">{tempsMinList[index]}</span>/
+              <span className="tempMax">{tempsMaxList[index]}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
-}
+};
 
-export default WeatherForecast
+export default WeatherComponent;
