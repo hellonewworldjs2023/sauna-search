@@ -6,6 +6,7 @@ const dummyData =
         image:"./img/daitouyou.jpg",
         adress:"大阪府 大阪市 北区中崎西2-1-9 中崎観光ビル大東洋",
         area:"大阪府 大阪市 北区",
+        prefecture:"大阪",
         tel:"06-6312-7522",
         page:"http://www.daitoyo.co.jp/spa/mens/",
         male:{
@@ -59,6 +60,7 @@ const dummyData =
         image:"./img/nobeha_tsuruhashi.jpg",
         adress:"大阪府 大阪市 東成区玉津3-13-41",
         area:"大阪府 大阪市 東成区",
+        prefecture:"大阪",
         tel:"06-4259-1126",
         page:"http://www.nobuta123.co.jp/nobehatsuruhashi/",
         male:{
@@ -112,6 +114,7 @@ const dummyData =
         image:"./img/naniwanoyu.jpg",
         adress:"大阪府 大阪市 北区長柄西1-7-31",
         area:"大阪府 大阪市 北区",
+        prefecture:"大阪",
         tel:"06-6882-4126",
         page:"https://www.naniwanoyu.com/",
         male:{
@@ -165,6 +168,7 @@ const dummyData =
         image:"./img/utopia-shiratamaonsen.jpg",
         adress:"大阪府 大阪市 城東区蒲生2-7-36",
         area:"大阪府 大阪市 城東区",
+        prefecture:"大阪",
         tel:"06-6933-0828",
         page:"https://www.utopia-shiratama.com/",
         male:{
@@ -220,6 +224,7 @@ const dummyData =
     //     image:"./img/~",
     //     adress:"",
     //     area:"",
+    //     prefecture,
     //     tel:"",
     //     page:"",
     //     male:{

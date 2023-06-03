@@ -127,10 +127,6 @@ const WeatherForecast = () => {
       
       const dayList = ["日", "月", "火", "水", "木", "金", "土"];
       
-      // const timeDefinesList = new Array();
-      // const weatherCodeList = new Array();
-      // const tempsMinList = new Array();
-      // const tempsMaxList = new Array();
 
       const [timeDefinesList,setTimeDefinesList] = useState([]);
       const [weatherCodeList,setWeatherCodeList] = useState([]);
@@ -206,11 +202,18 @@ const WeatherForecast = () => {
               weatherTelop[i]= weatherCode[weatherCodeList[i]][2];
           
               //外気浴予報の記述
-              if(weatherCodeList[i] === "100"){
+              if(weatherCodeList[i] === "100"|weatherCodeList[i] === "101"
+              |weatherCodeList[i]==="111"){
                 airForecast[i] = "◎";
-              }else if(weatherCodeList[i] === "200"){
+              }else if(weatherCodeList[i] ==="102"|weatherCodeList[i] ==="103"
+              |weatherCodeList[i] ==="104"|weatherCodeList[i] ==="105"
+              |weatherCodeList[i] ==="106"|weatherCodeList[i] ==="107"
+              |weatherCodeList[i] === "200"|weatherCodeList[i] === "201"
+              |weatherCodeList[i] ==="202"|weatherCodeList[i] ==="203"
+              |weatherCodeList[i] ==="211"){
                 airForecast[i] = "〇";
-              }else if(weatherCodeList[i] === "300"){
+              }else if(weatherCodeList[i] === "300" |weatherCodeList[i] === "302"
+              |weatherCodeList[i] ==="303"){
                 airForecast[i] = "△";
               }else{
                 airForecast[i] = "-";
@@ -231,7 +234,7 @@ const WeatherForecast = () => {
     <>
         
         <div id="location"></div><a href="https://www.jma.go.jp/bosai/forecast/" target="_blank">気象庁のデータを元に作成</a>
-        <div className="weatherForecast w-[840px] h-[240px] text-center border border-solid border-black flex flex-row">
+        <div className="weatherForecast w-[840px] h-[200px] text-center border border-solid border-black flex flex-row mx-auto">
         {timeDefinesList.map((time,i)=> 
 
           <div className="weather w-[120px] box-border border border-solid border-[#666]" key={time}>
