@@ -212,7 +212,8 @@ const WeatherForecast = () => {
               |weatherCodeList[i] ==="202"|weatherCodeList[i] ==="203"
               |weatherCodeList[i] ==="211"){
                 airForecast[i] = "〇";
-              }else if(weatherCodeList[i] === "300" |weatherCodeList[i] === "302"
+              }else if(weatherCodeList[i] === "212"|weatherCodeList[i] === "214"
+              |weatherCodeList[i] === "300" |weatherCodeList[i] === "302"
               |weatherCodeList[i] ==="303"){
                 airForecast[i] = "△";
               }else{

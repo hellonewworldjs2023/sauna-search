@@ -15,18 +15,20 @@ const Information = (props) => {
             
             <div className='text-left'>
                 <table>
-                    <tr>
-                        <td>施設名：</td><td>{name}</td>
-                    </tr>
-                    <tr>
-                        <td>住所：</td><td>{adress}</td>
-                    </tr>
-                    <tr>
-                        <td>電話番号:</td><td>{tel}</td>
-                    </tr>
-                    <tr>
-                        <td>ホームページ:</td><td><span className='underline-offset-1'><a href={page} target="_blank">{page}</a></span></td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>施設名：</td><td>{name}</td>
+                        </tr>
+                        <tr>
+                            <td>住所：</td><td>{adress}</td>
+                        </tr>
+                        <tr>
+                            <td>電話番号:</td><td>{tel}</td>
+                        </tr>
+                        <tr>
+                            <td>ホームページ:</td><td><span className='underline-offset-1'><a href={page} target="_blank">{page}</a></span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
        </div>
