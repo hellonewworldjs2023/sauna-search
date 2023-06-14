@@ -8,9 +8,9 @@ const Information = (props) => {
   return (
     <div className=''>
        <h2 className='text-xl mb-2'>基本情報</h2>
-       <div className='flex flex-row w-3/4 mx-auto'>
+       <div className='xl:flex md:flex-row md:w-3/4 mx-auto'>
            <div className='mr-5'>
-                <img src={newimage} alt="orz" width="440" height="330"/>
+                <img src={newimage} alt="orz" width="440" height="330" className='mx-auto block'/>
            </div>
             
             <div className='text-left'>
