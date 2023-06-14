@@ -19,7 +19,7 @@ const Sauna = () => {
 
   return (
     <div className='text-center'>
-      <div className='w-3/5 bg-white mx-auto '>
+      <div className='w-1/1 md:w-3/5 bg-white mx-auto '>
         <h1 className='text-4xl font-bold mb-12'>{saunaData.name}</h1>
         <div className='mb-10'>
           <SaunaFacility sex="男湯" saunaTemp={saunaData.male.saunaTemp} coldBathTemp={saunaData.male.coldBath}

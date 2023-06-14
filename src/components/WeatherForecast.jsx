@@ -235,16 +235,22 @@ const WeatherForecast = () => {
     <>
         
         <div id="location"></div><a href="https://www.jma.go.jp/bosai/forecast/" target="_blank">気象庁のデータを元に作成</a>
-        <div className="weatherForecast w-[840px] h-[200px] text-center border border-solid border-black flex flex-row mx-auto">
+        <div className="weatherForecast w-[160px] lg:w-[840px] h-[860px] lg:h-[200px] text-center border border-solid border-black flex flex-col lg:flex-row mx-auto">
         {timeDefinesList.map((time,i)=> 
 
-          <div className="weather w-[120px] box-border border border-solid border-[#666]" key={time}>
+          <div className="weather w-[160px] lg:w-[120px] h-[720px] lg:h-[200px] box-border border border-solid border-[#666]" key={time}>
             <div className={"date text-sm "+ (weekdayCount[i] === 0 ? "text-red-600":weekdayCount[i]===6 ? "text-blue-600" : "")}><p>{date[i]}</p></div>
-            <div className="text-sm flex justify-center"><img src={weatherImg[i]} alt="orz"/></div>
-            <div className="text-sm"><p>{weatherTelop[i]} </p><br/></div>
-            <div className='text-sm'><p>外気浴予報</p></div>
-            <div className='text-2xl'><p>{airForecast[i]}</p></div>
-            <div className='text-sm'><span className=" text-blue-600">{tempsMinList[i]}℃</span>/<span className="text-red-600">{tempsMaxList[i]}℃</span></div>  
+            <div className='flex lg:flex-col'>
+              <div>
+                <div className="text-sm flex justify-center"><img src={weatherImg[i]} alt="orz"/></div>
+                <div className="text-sm"><p>{weatherTelop[i]} </p><br/></div>
+              </div>
+              <div>
+                <div className='text-sm'><p>外気浴予報</p></div>
+                <div className='text-2xl'><p>{airForecast[i]}</p></div>
+                <div className='text-sm'><span className=" text-blue-600">{tempsMinList[i]}℃</span>/<span className="text-red-600">{tempsMaxList[i]}℃</span></div>
+              </div>  
+            </div>
           </div>
           
         )}
