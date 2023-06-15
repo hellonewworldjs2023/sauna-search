@@ -5,11 +5,11 @@ const Service = (props) => {
   return (
     <div >
         <h3 className='text-xl mb-2'>設備</h3>
-        <ul className='w-1/3 mx-auto border-2 border-black '>
-                <li className='border border-black text-left inline '>24時間営業</li><li className='border border-black inline w-4'>{allTime ? "〇":"-"}</li><li className='border border-black text-left inline'>館内休憩スペース</li><li className='border border-black inline lg:block'>{restArea ? "〇":"-"}</li>
-                <li className='border border-black text-left inline'>食事処</li><li className='border border-black '>{eatingSpace ? "〇":"-"}</li>
-                <li className='border border-black text-left inline'>漫画</li><li className='border border-black'>{comics ? "〇":"-"}</li><li className='border border-black text-left inline'>給水器</li><li className='border border-black inline'>{waterDispenser ? "〇":"-"}</li>
-                <li className='border border-black text-left inline'>駐車場</li><li className='border border-black'>{parkingArea ? "〇":"-"}</li> 
+        <ul className='w-[290px] lg:w-[482px] mx-auto flex flex-wrap border border-black '>
+                <li className='border w-36 lg:w-40 border-black text-left '>24時間営業<span className='w-5 border text-center  float-right '>{allTime ? "〇":"-"}</span></li><li className='border w-36 lg:w-40 border-black text-left'>館内休憩スペース<span className='w-5 border text-center float-right'>{restArea ? "〇":"-"}</span></li>
+                <li className='border w-36 lg:w-40 border-black text-left'>食事処<span className='w-5 border text-center float-right'>{eatingSpace ? "〇":"-"}</span></li>
+                <li className='border w-36 lg:w-40 border-black text-left'>漫画<span className=' w-5 border text-center float-right'>{comics ? "〇":"-"}</span></li><li className='border w-36 lg:w-40 border-black text-left'>給水器<span className='w-5 border text-center float-right'>{waterDispenser ? "〇":"-"}</span></li>
+                <li className='border w-36 lg:w-40 border-black text-left'>駐車場<span className='w-5 border text-center float-right' >{parkingArea ? "〇":"-"}</span> </li>
         </ul>
     </div>
   )

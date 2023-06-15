@@ -5,16 +5,12 @@ const Rental = (props) => {
   return (
     <div>
         <h3 className='text-xl mb-2'>タオル・館内着・サウナマット</h3>
-        <table className='w-3/5 mx-auto border-2 border-black '>
-          <tbody >
-            <tr>
-                <td className='border border-black w-22 text-left'>レンタルフェイスタオル</td><td className='border border-black'>{faceTowel ? "〇":"-"}</td>
-                <td className='border border-black w-22 text-left'>レンタルバスタオル</td><td className='border border-black'>{bathTowel ? "〇":"-"}</td>
-                <td className='border border-black w-22 text-left'>館内着</td><td className='border border-black'>{indoorWear ? "〇":"-"}</td>
-                <td className='border border-black w-22 text-left'>サウナマット</td><td className='border border-black'>{mat ? "〇":"-"}</td>
-            </tr>
-          </tbody>
-        </table>
+        <ul className='w-48 2xl:w-[770px] lg:w-[386px] mx-auto flex flex-wrap border border-black '>
+            <li className='border border-black w-48 text-left'>レンタルフェイスタオル<span className='border w-5 float-right text-center'>{faceTowel ? "〇":"-"}</span></li>
+            <li className='border border-black w-48 text-left'>レンタルバスタオル<span className='border w-5 float-right text-center'>{bathTowel ? "〇":"-"}</span></li>
+            <li className='border border-black w-48 text-left'>館内着<span className='border w-5 float-right text-center'>{indoorWear ? "〇":"-"}</span></li>
+            <li className='border border-black w-48 text-left'>サウナマット<span className='border w-5 float-right text-center'>{mat ? "〇":"-"}</span></li>
+        </ul>
     </div>
   )
 }

@@ -5,14 +5,11 @@ const Paying = (props) => {
   return (
     <div>
         <h3 className='text-xl mb-2'>支払い方法</h3>
-        <table className='w-2/3 mx-auto border-2 border-black '>
-          <tbody>
-              <tr>
-                  <td className='border border-black w-22 text-left'>現金</td><td className='border border-black'>{cash ? "〇":"-"}</td><td className='border border-black w-22 text-left'>クレジットカード</td><td className='border border-black'>{credit ? "〇":"-"}</td>
-                  <td className='border border-black w-22 text-left'>電子マネー</td><td className='border border-black'>{eMoney ? "〇":"-"}</td>
-              </tr>
-          </tbody>
-        </table>
+        <ul className='w-44 lg:w-[530px]  mx-auto flex flex-wrap border border-black '>
+            <li className='border w-44 border-black text-left'>現金<span className=' border w-5 float-right text-center'>{cash ? "〇":"-"}</span></li>
+            <li className='border w-44 border-black text-left'>クレジットカード<span className='border w-5 float-right text-center'>{credit ? "〇":"-"}</span></li>
+            <li className='border w-44 border-black text-left'>電子マネー<span className='border w-5 float-right text-center'>{eMoney ? "〇":"-"}</span></li>
+        </ul>
     </div>
   )
 }
