@@ -216,6 +216,60 @@ const dummyData =
             hairDryer:true
         }
     },
+    {
+        id:5,
+        name:"サウナ＆カプセルホテル　北欧",
+        image:"./img/hotel-hokuou.jpg",
+        adress:"東京都 台東区 上野7-2-16",
+        area:"東京都　台東区",
+        prefecture:"東京",
+        tel:"03-3845-8000",
+        page:"https://www.saunahokuou.com/",
+        male:{
+            saunaTemp:113,
+            coldBath:15,
+            airBath:true,
+            louryu:true,
+            autoLouryu:false,
+            selfLouryu:true,
+            totonoiSpace:true
+        },
+        female:{
+            saunaTemp:"",
+            coldBath:"",
+            airBath: false,
+            louryu:false,
+            autoLouryu:false,
+            selfLouryu:false,
+            totonoiSpace:false
+        },
+        price:1400,
+        service:{
+            allTime:true,
+            restArea:true ,
+            eatingSpace:true,
+            comics:true ,
+            waterDispenser:true,
+            parkingArea:false
+        },
+        paying:{
+            cash:true ,
+            credit:true ,
+            eMoney:true
+        },
+        rental:{
+            faceTowel:true,
+            bathTowel:true,
+            indoorWear:true,
+            mat:true
+        },
+        amenities:{
+            shampoo:true,
+            conditioner:true,
+            bodySoap:true ,
+            hairDryer:true
+        }
+    },
 ];
 
     // {
@@ -224,7 +278,7 @@ const dummyData =
     //     image:"./img/~",
     //     adress:"",
     //     area:"",
-    //     prefecture,
+    //     prefecture:"",
     //     tel:"",
     //     page:"",
     //     male:{
