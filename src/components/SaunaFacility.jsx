@@ -9,11 +9,11 @@ const SaunaFacility = (props) => {
         <div className='flex flex-row mx-auto w-48'>
             <div className='mx-5'>
                 <img src="../img/sauna-logo.jpg" alt="orz" width="100px" height="100px"/>
-                <p>サウナ<br></br><span className='text-red-600'><span className='text-2xl'>{saunaTemp}</span>℃</span></p>
+                <p><span className='text-red-600'>サウナ<br></br><span className='text-2xl'>{saunaTemp}</span>℃</span></p>
             </div>
             <div className='mx-5'>
             <img src="../img/coldbath-logo.jpg" alt="orz" width="100px" height="100px"/>
-                <p>水風呂<br></br><span className='text-blue-600'><span className='text-2xl'>{coldBathTemp}</span>℃</span></p>
+                <p><span className='text-blue-600'>水風呂<br></br><span className='text-2xl'>{coldBathTemp}</span>℃</span></p>
             </div>    
         </div>
         <div>

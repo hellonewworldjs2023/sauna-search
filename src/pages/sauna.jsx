@@ -50,7 +50,7 @@ const Sauna = () => {
           <Information image={saunaData.image} name={saunaData.name} adress={saunaData.adress} tel={saunaData.tel} page={saunaData.page}/>
         </div>
         <div className='mb-10'>
-          <WeatherForecast/>
+          <WeatherForecast prefecture={saunaData.prefecture}/>
         </div>
         <div className=''>
           <Link to="/">

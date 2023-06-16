@@ -6,8 +6,7 @@ const Article = (props) => {
 
   return (
     <div >
-        <p>Article</p>
-        <div className='flex flex-row'>
+        <div className='flex flex-row mb-6'>
           <img src={image} alt="orz" height="130" width="160"></img>
           <div>
             <h2 className='font-bold text-xl'>{name}</h2>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const WeatherForecast = () => {
+const WeatherForecast = (props) => {
 
     const weatherCode = {
         100: ["100.svg", "500.svg", "晴れ"],
@@ -122,8 +122,23 @@ const WeatherForecast = () => {
         427: ["400.svg", "400.svg", "雪一時みぞれ"],
         450: ["400.svg", "400.svg", "雪で雷を伴う"],
       };
+
+      const {prefecture} = props;
+
+      let regionCode;
+
+      switch (prefecture){
+        case "東京":
+          regionCode = "130000";
+          break;
+        case "大阪":
+          regionCode = "270000";  
+          break;
+        default:
+          regionCode = "260000";//京都
+      }
       
-      const url = "https://www.jma.go.jp/bosai/forecast/data/forecast/270000.json";
+      const url = `https://www.jma.go.jp/bosai/forecast/data/forecast/${regionCode}.json`;
       
       const dayList = ["日", "月", "火", "水", "木", "金", "土"];
       
@@ -214,7 +229,7 @@ const WeatherForecast = () => {
                 airForecast[i] = "〇";
               }else if(weatherCodeList[i] === "212"|weatherCodeList[i] === "214"
               |weatherCodeList[i] === "300" |weatherCodeList[i] === "302"
-              |weatherCodeList[i] ==="303"){
+              |weatherCodeList[i] ==="303"|weatherCodeList[i] ==="313"){
                 airForecast[i] = "△";
               }else{
                 airForecast[i] = "-";
