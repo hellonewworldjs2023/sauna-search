@@ -167,6 +167,7 @@ const WeatherForecast = (props) => {
                 `${weather[1].publishingOffice}: ${weather[1].timeSeries[0].areas[0].area.name} `
               );
 
+            //代入用配列生成
             const timeDefinesList = new Array();
             const weatherCodeList = new Array();
             const tempsMinList = new Array();
