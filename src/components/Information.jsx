@@ -23,10 +23,10 @@ const Information = (props) => {
                             <td>住所：</td><td>{adress}</td>
                         </tr>
                         <tr>
-                            <td>電話番号:</td><td>{tel}</td>
+                            <td>電話番号：</td><td>{tel}</td>
                         </tr>
                         <tr>
-                            <td>ホームページ:</td><td><span className='underline-offset-1'><a href={page} target="_blank">{page}</a></span></td>
+                            <td>ホームページ：</td><td><span className='underline-offset-1'><a href={page} target="_blank">{page}</a></span></td>
                         </tr>
                     </tbody>
                 </table>

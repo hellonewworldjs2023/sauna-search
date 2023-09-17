@@ -13,7 +13,7 @@ const Article = (props) => {
             <p>{area}</p>
             <div className='flex flex-row'>
               <h1><span className='rounded-md bg-blue-600 text-white'>男</span>　㋚{maleSaunaTemp}水{maleColdBath}外{maleAirBath ? "〇":"-"}ロ{maleLouryu ? "〇":"-"}</h1>
-              <p>　　　<span className='rounded-md bg-red-500 text-white'>女</span>　㋚{femaleSaunaTemp}水{femaleColdBath}外{femaleAirBath ? "〇":"-"}ロ{femaleLouryu ? "〇":"-"}</p>
+              <p><span className='rounded-md bg-red-500 text-white'>女</span>　㋚{femaleSaunaTemp}水{femaleColdBath}外{femaleAirBath ? "〇":"-"}ロ{femaleLouryu ? "〇":"-"}</p>
             </div>
             <p>￥{price}～</p>
           </div>

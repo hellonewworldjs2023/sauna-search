@@ -27,7 +27,7 @@ const dummyData =
             selfLouryu:false,
             totonoiSpace:false
         },
-        price:1300,
+        price:1600,
         service:{
             allTime:false,
             restArea:true,
@@ -270,6 +270,60 @@ const dummyData =
             hairDryer:true
         }
     },
+    {
+            id:6,
+            name:"黄金湯",
+            image:"./img/koganeyu.jpg",
+            adress:"東京都 墨田区 太平4-14-6",
+            area:"東京都　墨田区",
+            prefecture:"東京",
+            tel:"03-3622-5009",
+            page:"http://koganeyu.com/",
+            male:{
+                saunaTemp:106,
+                coldBath:13.0,
+                airBath:true ,
+                louryu:false,
+                autoLouryu:true ,
+                selfLouryu:false,
+                totonoiSpace:true
+            },
+            female:{
+                saunaTemp:105,
+                coldBath:15.0,
+                airBath:false,
+                louryu:false,
+                autoLouryu:false,
+                selfLouryu:true,
+                totonoiSpace:true
+            },
+            price:820,
+            service:{
+                allTime:false,
+                restArea:false,
+                eatingSpace:true,
+                comics:false,
+                waterDispenser:true,
+                parkingArea:false
+            },
+            paying:{
+                cash:true,
+                credit:false,
+                eMoney:true
+            },
+            rental:{
+                faceTowel:true,
+                bathTowel:true,
+                indoorWear:false,
+                mat:true
+            },
+            amenities:{
+                shampoo:true,
+                conditioner:false,
+                bodySoap:true,
+                hairDryer:true
+            }
+        },
 ];
 
     // {
