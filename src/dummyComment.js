@@ -21,7 +21,7 @@ const dummyComment =
         user_name:"町の風呂好き",
         date:"2023-9-15",
         facility_name:"天然温泉　なにわの湯",
-        title:"遮るものが何もない場所での外気欲",
+        title:"遮るものが何もない場所での外気浴",
         commnet:"texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext"
     },
     {
