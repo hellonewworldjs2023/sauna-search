@@ -225,7 +225,7 @@ const WeatherForecast = (props) => {
               |weatherCodeList[i] ==="106"|weatherCodeList[i] ==="107"
               |weatherCodeList[i] === "200"|weatherCodeList[i] === "201"
               |weatherCodeList[i] ==="202"|weatherCodeList[i] ==="203"
-              |weatherCodeList[i] ==="211"){
+              |weatherCodeList[i] ==="210"|weatherCodeList[i] ==="211"){
                 airForecast[i] = "〇";
               }else if(weatherCodeList[i] === "212"|weatherCodeList[i] === "214"
               |weatherCodeList[i] === "300" |weatherCodeList[i] === "302"

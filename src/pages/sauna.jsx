@@ -6,6 +6,7 @@ import Paying from '../components/Paying';
 import Rental from '../components/Rental';
 import SaunaFacility from '../components/SaunaFacility';
 import Service from '../components/Service';
+import Comment from '../components/Comment';
 import WeatherForecast from '../components/WeatherForecast';
 import dummyData from '../dummyData';
 
@@ -15,6 +16,8 @@ const Sauna = () => {
     const index = saunaId -1;
     const [data,setData] = useState(dummyData);
     const saunaData = data[index];
+    
+    
     
 
   return (
@@ -48,6 +51,9 @@ const Sauna = () => {
         </div>
         <div className='mb-10'>
           <Information image={saunaData.image} name={saunaData.name} adress={saunaData.adress} tel={saunaData.tel} page={saunaData.page}/>
+        </div>
+        <div className='mb-10'> 
+          <Comment name={saunaData.name}/>
         </div>
         <div className='mb-10'>
           <WeatherForecast prefecture={saunaData.prefecture}/>
